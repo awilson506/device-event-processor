@@ -20,8 +20,10 @@ type DeviceDetails struct {
 
 // MarshalJSON - custom marshaler to hide generated_at and position if null on the way out
 func (d DeviceDetails) MarshalJSON() ([]byte, error) {
-	m := map[string]interface{}{
-		"device": d.DeviceId,
+	m := map[string]interface{}{}
+
+	if d.DeviceId != "" {
+		m["device"] = d.DeviceId
 	}
 
 	if !isNil(d.Position.Latitude) {

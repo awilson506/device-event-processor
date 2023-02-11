@@ -9,19 +9,19 @@ import (
 )
 
 // DeviceDB - only holds the db connection for now
-type DeviceDB struct {
+type DeviceService struct {
 	Connection *sql.DB
 }
 
 // New - grab a new instance of the device db service
-func New(db *sql.DB) *DeviceDB {
-	return &DeviceDB{
+func New(db *sql.DB) *DeviceService {
+	return &DeviceService{
 		Connection: db,
 	}
 }
 
 // ProcessDeviceUpdate - insert the new event and return the latest data
-func (d *DeviceDB) ProcessDeviceUpdate(deviceJsonUpdate string) (*database.DeviceDetails, error) {
+func (d *DeviceService) ProcessDeviceUpdate(deviceJsonUpdate string) (*database.DeviceDetails, error) {
 	newDeviceDetails := database.DeviceDetails{}
 	err := json.Unmarshal([]byte(deviceJsonUpdate), &newDeviceDetails)
 

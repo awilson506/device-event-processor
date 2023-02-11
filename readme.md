@@ -11,7 +11,7 @@ running:
 go mod edit -go=1.MY_VERSION
 ```
 
-Start the Postgres database service: `docker compose`
+Start the Postgres database service with docker compose:
 ```sh
 docker compose up
 ```
@@ -33,4 +33,44 @@ Process the records:
 Expected output:
 ```json
 {"device":"A123","heading":101,"speed":48.7}
+```
+
+
+## Using The Device API
+This application offers two API endpoints:
+
+### Get Latest Device Details By Id
+```
+curl -s http://localhost:8080/devices/get-latest-details/A123
+```
+Example Response:
+```json
+{  
+    "device":"A123",
+    "heading":101,
+    "speed":48.7
+}
+```
+### Get All Latest Device Details
+```
+curl -s http://localhost:8080/devices/get-latest-details
+```
+Example Response:
+```json
+[
+    {
+        "device":"B345",
+        "heading":45,
+        "position":{
+            "lat":-78.0101,
+            "long":42.0101
+        },
+        "speed":21.55
+    },
+    {
+        "device":"A123",
+        "heading":101,
+        "speed":48.7
+    }
+]
 ```

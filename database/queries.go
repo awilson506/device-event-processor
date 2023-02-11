@@ -13,6 +13,17 @@ FROM latest_device_details
 WHERE device_id = $1;
 `
 
+const GetAllLatestDeviceDetailsSQL = `
+SELECT 
+	device_id AS device,
+	generated_at AS generated,
+	speed,
+	heading,
+	latitude,
+	longitude
+FROM latest_device_details
+`
+
 // InsertDeviceDetails - insert a device event, maybe with some position data
 const InsertDeviceDetails = `
 WITH new_device_details AS (

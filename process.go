@@ -5,17 +5,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"time"
 
 	devices "github.com/gocariq/golang_data_challenge/pkg"
 	_ "github.com/lib/pq"
 )
 
 const DBCONN = "postgres://postgres:postgres@localhost:5432/process_db?sslmode=disable"
-
-type CustomTime struct {
-	time.Time
-}
 
 func main() {
 	// Open and ping a database connection to the docker db image.
