@@ -6,7 +6,7 @@ import (
 )
 
 // DeviceDetails - hold the details about a vehicle/vessel event
-// there's really only two feilds we can count on being a string everytime here, device and generated
+// there's really only two feilds we can count on being a string consistently here, device and generated
 type DeviceDetails struct {
 	DeviceId  string      `json:"device"`
 	Generated string      `json:"generated"`

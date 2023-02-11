@@ -30,7 +30,7 @@ func (d *DeviceDB) ProcessDeviceUpdate(deviceJsonUpdate string) (*database.Devic
 	}
 
 	// in the case that a late record comes in and we want the view to pick up the non null value
-	// we should store the event even if it's old to keep the record
+	// most likely we would be processing these off a queue which doesn't always ensure order...
 	d.InsertDeviceDetails(&newDeviceDetails)
 
 	return d.GetLatestDeviceDetails(newDeviceDetails.DeviceId), nil

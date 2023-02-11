@@ -32,7 +32,8 @@ func main() {
 	}
 
 	devicesService := devices.New(db)
-	// add validation for args
+
+	// TODO: add validation for args
 	value := os.Args[1]
 
 	record, err := devicesService.ProcessDeviceUpdate(value)
