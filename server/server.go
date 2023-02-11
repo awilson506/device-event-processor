@@ -37,6 +37,7 @@ func New(db *sql.DB) *Server {
 
 	s.server = &http.Server{
 		Handler: s.mux,
+		Addr:    ":8080",
 	}
 	return s
 }

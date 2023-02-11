@@ -26,6 +26,10 @@ func (d DeviceDetails) MarshalJSON() ([]byte, error) {
 		m["device"] = d.DeviceId
 	}
 
+	if !isNil(d.Speed) {
+		m["speed"] = d.Speed
+	}
+
 	if !isNil(d.Position.Latitude) {
 		position := map[string]interface{}{
 			"lat":  d.Position.Latitude,
@@ -36,10 +40,6 @@ func (d DeviceDetails) MarshalJSON() ([]byte, error) {
 
 	if !isNil(d.Heading) {
 		m["heading"] = d.Heading
-	}
-
-	if !isNil(d.Heading) {
-		m["speed"] = d.Speed
 	}
 
 	return json.Marshal(m)
