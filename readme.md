@@ -37,8 +37,14 @@ Expected output:
 
 
 ## Using The Device API
-This application offers two API endpoints:
-
+Build The Server:
+```sh
+go build cmd/server/main.go
+```
+Start The Server
+```sh
+./server
+```
 ### Get Latest Device Details By Id
 ```
 curl -s http://localhost:8080/devices/get-latest-details/A123
