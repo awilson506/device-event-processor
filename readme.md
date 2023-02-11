@@ -35,7 +35,6 @@ Expected output:
 {"device":"A123","heading":101,"speed":48.7}
 ```
 
-
 ## Using The Device API
 Build The Server:
 ```sh
@@ -45,6 +44,9 @@ Start The Server
 ```sh
 ./server
 ```
+
+This application offers two API endpoints
+
 ### Get Latest Device Details By Id
 ```
 curl -s http://localhost:8080/devices/get-latest-details/A123
