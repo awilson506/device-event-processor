@@ -6,6 +6,7 @@ import (
 )
 
 // DeviceDetails - hold the details about a vehicle/vessel event
+// there's really only two feilds we can count on being a string everytime here, device and generated
 type DeviceDetails struct {
 	DeviceId  string      `json:"device"`
 	Generated string      `json:"generated"`
@@ -42,6 +43,7 @@ func (d DeviceDetails) MarshalJSON() ([]byte, error) {
 	return json.Marshal(m)
 }
 
+// isNil - really make sure that interface is nil
 func isNil(i interface{}) bool {
 	if i == nil {
 		return true

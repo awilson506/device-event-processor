@@ -20,6 +20,7 @@ func New(db *sql.DB) *DeviceDB {
 	}
 }
 
+// ProcessDeviceUpdate - insert the new event and return the latest data
 func (d *DeviceDB) ProcessDeviceUpdate(deviceJsonUpdate string) (*database.DeviceDetails, error) {
 	newDeviceDetails := database.DeviceDetails{}
 	err := json.Unmarshal([]byte(deviceJsonUpdate), &newDeviceDetails)

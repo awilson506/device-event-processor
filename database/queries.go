@@ -13,7 +13,7 @@ FROM latest_device_details
 WHERE device_id = $1;
 `
 
-// InsertDeviceDetails - insert
+// InsertDeviceDetails - insert a device event, maybe with some position data
 const InsertDeviceDetails = `
 WITH new_device_details AS (
 	INSERT INTO device_events (device_id, generated_at, speed, heading) 
