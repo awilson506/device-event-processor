@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "3514507c-b28f-42bf-ab53-be17eddf0c0a",
+		"name": "Device Details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8560171"
+	},
+	"item": [
+		{
+			"name": "Get Device By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/devices/get-latest-details/A123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices",
+						"get-latest-details",
+						"A123"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Device By Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/devices/get-latest-details/A123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"get-latest-details",
+								"A123"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Feb 2023 10:31:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"device\": \"A123\",\n    \"heading\": 101,\n    \"position\": {\n        \"lat\": -80.0101,\n        \"long\": 40.0101\n    },\n    \"speed\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Devices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/devices/get-latest-details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"devices",
+						"get-latest-details"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Devices",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/devices/get-latest-details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"devices",
+								"get-latest-details"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 12 Feb 2023 10:32:21 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "175"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"device\": \"B345\",\n        \"heading\": 45,\n        \"position\": {\n            \"lat\": -78.0101,\n            \"long\": 42.0101\n        },\n        \"speed\": 21.55\n    },\n    {\n        \"device\": \"A123\",\n        \"heading\": 101,\n        \"position\": {\n            \"lat\": -80.0101,\n            \"long\": 40.0101\n        },\n        \"speed\": 0\n    }\n]"
+				}
+			]
+		}
+	]
+}
