@@ -1,4 +1,5 @@
 process
+api-server
 .vscode
 .env
 .DS_Store
