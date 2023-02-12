@@ -38,11 +38,11 @@ Expected output:
 ## Using The Device API
 Build The Server:
 ```sh
-go build cmd/server/main.go
+go build -o api-server cmd/server/server.go
 ```
 Start The Server
 ```sh
-./server
+./api-server
 ```
 
 This application offers two API endpoints
